@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <!--From https://codepen.io/frytyler/pen/EGdtg-->
+  <head>
+    <meta charset="UTF-8" />
+    <title>ML API</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Arimo"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Hind:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- 'Date',
+ 'Hour',
+ 'Temperature(C)',
+ 'Wind Speed(m/s)',
+ 'Visibility(10m)',
+ 'Dew point temperature(C)',
+ 'Solar Radiation(MJ/m2)',
+ 'Rainfall(mm)',
+ 'Seasons',
+ 'Holiday',
+ 'Functioning Day',
+ 'Rented Bike Count' -->
+  </head>
+
+  <body>
+    <div class="login">
+      <h1>Linear Regression</h1>
+
+      <!-- Main Input For Receiving Query to our ML -->
+      <form action="{{ url_for('predict')}}" method="post">
+        <div>
+          <label>Date : </label>
+          <input type="text" name="Date" placeholder="Date" required="required" />
+        </div>
+        <br />
+        <div>
+          <label>Hour : </label>
+          <input type="text" name="Hour" placeholder="Hour" required="required" />
+        </div>
+        <br />
+
+        <div>
+          <label>Temperature(C): </label>
+          <input
+            type="text"
+            name="Temperature(C)"
+            placeholder="Temperature(C)  "
+            required="required"
+          />
+        </div>
+        <br />
+
+        <div>
+          <label>Humidity(%): </label>
+          <input
+            type="text"
+            name="Humidity(%)"
+            placeholder="Humidity(%) "
+            required="required"
+          />
+        </div>
+
+        <br />
+
+        <div>
+          <label>Wind Speed(m/s)  : </label>
+          <input
+            type="text"
+            name="Wind Speed(m/s)"
+            placeholder="Wind Speed(m/s)"
+            required="required"
+          />
+        </div>
+
+        <br />
+
+        <div>
+          <label>Visibilty(10m) : </label>
+          <input
+            type="text"
+            name="Visibilty(10)"
+            placeholder="Visibilty(10m)"
+            required="required"
+          />
+        </div>
+
+        <br />
+        <div>
+          <label>Dew point temperature(C) : </label>
+          <input
+            type="text"
+            name="Dew point temperature(C)"
+            placeholder="Dew point temperature(C)"
+            required="required"
+          />
+        </div>
+
+        <br />
+        <div>
+          <label>Solar Radiation (MJ/m2) : </label>
+          <input
+            type="text"
+            name="Solar Radiation (MJ/m2)"
+            placeholder="Solar Radiation (MJ/m2)"
+            required="required"
+          />
+        </div>
+
+        <br />
+        <div>
+          <label>Rainfall(mm): </label>
+          <input
+            type="text"
+            name="Rainfall(mm)"
+            placeholder="Rainfall(mm)"
+            required="required"
+          />
+        </div>
+
+        <br />
+        <div>
+          <label>Snowfall(cm) : </label>
+          <input
+            type="text"
+            name="Snowfall(cm)"
+            placeholder="Snowfall(cm)"
+            required="required"
+          />
+        </div>
+
+        <br />
+        <div>
+          <label>Seasons : </label>
+          <input
+            type="text"
+            name="Seasons"
+            placeholder="Seasons"
+            required="required"
+          />
+        </div>
+
+        <br />
+
+        <div>
+          <label>Holiday : </label>
+          <input
+            type="text"
+            name="Holiday"
+            placeholder="holiday"
+            required="required"
+          />
+        </div>
+        <br />
+
+        <div>
+          <label>Functioning day  : </label>
+          <input
+            type="text"
+            name="Fuctioning day"
+            placeholder="Functioning day"
+            required="required"
+          />
+        </div>
+        <br />
+
+        <div>
+          <label>Rented Bike Count  : </label>
+          <input
+            type="text"
+            name="Rented Bike Count"
+            placeholder="Rented Bike Count"
+            required="required"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          Predict
+        </button>
+      </form>
+
+      <br />
+      <br />
+      {{ prediction_text }}
+    </div>
+  </body>
+</html>
