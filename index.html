@@ -25,66 +25,64 @@
       type="text/css"
     />
 
-    <!-- 'Date',
- 'Hour',
- 'Temperature(C)',
- 'Wind Speed(m/s)',
- 'Visibility(10m)',
- 'Dew point temperature(C)',
- 'Solar Radiation(MJ/m2)',
- 'Rainfall(mm)',
- 'Seasons',
- 'Holiday',
- 'Functioning Day',
- 'Rented Bike Count' -->
+    <!-- 'age',
+ 'job',
+ 'marital',
+ 'education',
+ 'default',
+ 'housing',
+ 'loan',
+ 'contact',
+ 'month',
+ 'day_of_week',
+ 'duration',
+ 'campaign',
+ 'pdays',
+ 'previous',
+ 'poutcome',
+ 'emp_var_rate',
+ 'cons_price_idx',
+ 'cons_conf_idx',
+ 'euirboe3m',
+ 'nr_employed',
+ 'emp_var_rate',
+ '' -y->
   </head>
 
   <body>
     <div class="login">
-      <h1>Linear Regression</h1>
+      <h1>Logistic Regression</h1>
 
       <!-- Main Input For Receiving Query to our ML -->
       <form action="{{ url_for('predict')}}" method="post">
         <div>
-          <label>Date : </label>
-          <input type="text" name="Date" placeholder="Date" required="required" />
+          <label>Age : </label>
+          <input type="text" name="Age" placeholder="age" required="required" />
         </div>
         <br />
         <div>
-          <label>Hour : </label>
-          <input type="text" name="Hour" placeholder="Hour" required="required" />
+          <label>Job : </label>
+          <input type="text" name="Job" placeholder="job" required="required" />
         </div>
         <br />
 
         <div>
-          <label>Temperature(C): </label>
+          <label>Marital: </label>
           <input
             type="text"
-            name="Temperature(C)"
-            placeholder="Temperature(C)  "
+            name="Marital"
+            placeholder="marital  "
             required="required"
           />
         </div>
         <br />
 
         <div>
-          <label>Humidity(%): </label>
+          <label>Education: </label>
           <input
             type="text"
-            name="Humidity(%)"
-            placeholder="Humidity(%) "
-            required="required"
-          />
-        </div>
-
-        <br />
-
-        <div>
-          <label>Wind Speed(m/s)  : </label>
-          <input
-            type="text"
-            name="Wind Speed(m/s)"
-            placeholder="Wind Speed(m/s)"
+            name="Education"
+            placeholder="education "
             required="required"
           />
         </div>
@@ -92,66 +90,11 @@
         <br />
 
         <div>
-          <label>Visibilty(10m) : </label>
+          <label>Default  : </label>
           <input
             type="text"
-            name="Visibilty(10)"
-            placeholder="Visibilty(10m)"
-            required="required"
-          />
-        </div>
-
-        <br />
-        <div>
-          <label>Dew point temperature(C) : </label>
-          <input
-            type="text"
-            name="Dew point temperature(C)"
-            placeholder="Dew point temperature(C)"
-            required="required"
-          />
-        </div>
-
-        <br />
-        <div>
-          <label>Solar Radiation (MJ/m2) : </label>
-          <input
-            type="text"
-            name="Solar Radiation (MJ/m2)"
-            placeholder="Solar Radiation (MJ/m2)"
-            required="required"
-          />
-        </div>
-
-        <br />
-        <div>
-          <label>Rainfall(mm): </label>
-          <input
-            type="text"
-            name="Rainfall(mm)"
-            placeholder="Rainfall(mm)"
-            required="required"
-          />
-        </div>
-
-        <br />
-        <div>
-          <label>Snowfall(cm) : </label>
-          <input
-            type="text"
-            name="Snowfall(cm)"
-            placeholder="Snowfall(cm)"
-            required="required"
-          />
-        </div>
-
-        <br />
-        <div>
-          <label>Seasons : </label>
-          <input
-            type="text"
-            name="Seasons"
-            placeholder="Seasons"
+            name="Default"
+            placeholder="default"
             required="required"
           />
         </div>
@@ -159,33 +102,165 @@
         <br />
 
         <div>
-          <label>Holiday : </label>
+          <label>Housing : </label>
           <input
             type="text"
-            name="Holiday"
-            placeholder="holiday"
+            name="Housing"
+            placeholder="housing"
+            required="required"
+          />
+        </div>
+
+        <br />
+        <div>
+          <label>Loan : </label>
+          <input
+            type="text"
+            name="Loan"
+            placeholder="loan"
+            required="required"
+          />
+        </div>
+
+        <br />
+        <div>
+          <label>Contact : </label>
+          <input
+            type="text"
+            name="Contact "
+            placeholder="contact "
+            required="required"
+          />
+        </div>
+
+        <br />
+        <div>
+          <label>Month: </label>
+          <input
+            type="text"
+            name="Month"
+            placeholder="month"
+            required="required"
+          />
+        </div>
+
+        <br />
+        <div>
+          <label>Day_Of_Week : </label>
+          <input
+            type="text"
+            name="Day_Of_Week"
+            placeholder=day_of_week"
+            required="required"
+          />
+        </div>
+
+        <br />
+        <div>
+          <label>Duration : </label>
+          <input
+            type="text"
+            name="Duration"
+            placeholder="duration"
+            required="required"
+          />
+        </div>
+
+        <br />
+
+        <div>
+          <label>Campaign : </label>
+          <input
+            type="text"
+            name="Campaign"
+            placeholder="campaign"
             required="required"
           />
         </div>
         <br />
 
         <div>
-          <label>Functioning day  : </label>
+          <label>Pdays  : </label>
           <input
             type="text"
-            name="Fuctioning day"
-            placeholder="Functioning day"
+            name="Pdays"
+            placeholder="pdays"
             required="required"
           />
         </div>
         <br />
-
-        <div>
-          <label>Rented Bike Count  : </label>
+                       
+          <label>Previous  : </label>
           <input
             type="text"
-            name="Rented Bike Count"
-            placeholder="Rented Bike Count"
+            name="Previous"
+            placeholder="previous"
+            required="required"
+          />
+
+        </div>
+        <br />
+                       
+          <label>Poutcome  : </label>
+          <input
+            type="text"
+            name="Poutcome"
+            placeholder="poutcome"
+            required="required"
+          />
+                               
+        </div>
+        <br />
+                       
+          <label>Emp_Var_Rate  : </label>
+          <input
+            type="text"
+            name="Emp_Var_Rate"
+            placeholder="emp_var_rate"
+            required="required"
+          />
+            
+        </div>
+        <br />
+                       
+          <label>Cons_Price_Idx  : </label>
+          <input
+            type="text"
+            name="Cons_Price_Idx"
+            placeholder="cons_price_idx"
+            required="required"
+          />
+        <div>
+                               
+        <br />
+                       
+          <label>Euirboem3m  : </label>
+          <input
+            type="text"
+            name="Euirboem3"
+            placeholder="euirboem3"
+            required="required"
+          />
+                               
+        </div>
+        <br />
+                       
+          <label>Nr_Employed  : </label>
+          <input
+            type="text"
+            name="Nr_Employed"
+            placeholder="nr_employed"
+            required="required"
+          />
+                      
+        </div>
+        <br />
+                               
+          <label>Y  : </label>
+          <input
+            type="text"
+            name="Y"
+            placeholder="y"
             required="required"
           />
         </div>
